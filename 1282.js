@@ -2,7 +2,7 @@
  * @param {number[]} groupSizes
  * @return {number[][]}
  */
-var groupThePeople = function(groupSizes) {
+var groupThePeople = function (groupSizes) {
     const groups = [];
     const answer = [];
     groupSizes.forEach((group, index) => {
@@ -17,5 +17,5 @@ var groupThePeople = function(groupSizes) {
     return answer;
 };
 
-console.log(groupThePeople([3,3,3,3,3,1,3]));
-console.log(groupThePeople([2,1,3,3,3,2]));
+console.log(groupThePeople([3, 3, 3, 3, 3, 1, 3]));
+console.log(groupThePeople([2, 1, 3, 3, 3, 2]));

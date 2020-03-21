@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var deepestLeavesSum = function(root) {
+var deepestLeavesSum = function (root) {
     let deepest = 0;
     const leaves = new Map();
     const traversal = (node, level) => {

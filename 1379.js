@@ -1,4 +1,4 @@
-var getTargetCopy = function(original, cloned, target) {
+var getTargetCopy = function (original, cloned, target) {
     let answer = null;
     const searchTarget = (node) => {
         if (node === null) return;
@@ -6,7 +6,7 @@ var getTargetCopy = function(original, cloned, target) {
             answer = node;
             return;
         }
-        
+
         if (answer === null) searchTarget(node.left);
         if (answer === null) searchTarget(node.right);
     }

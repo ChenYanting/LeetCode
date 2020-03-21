@@ -3,25 +3,17 @@
  * @return {number[][]}
  */
 var groupThePeople = function(groupSizes) {
-    const belongWhichGroup = new Map();
-    groupSizes.forEach((group, index) => {
-        if (belongWhichGroup.has(group)) belongWhichGroup.set(group, [...belongWhichGroup.get(group), index]);
-        else belongWhichGroup.set(group, [index]);
-    });
-
+    const groups = [];
     const answer = [];
-    for (let key of Array.from(belongWhichGroup.keys())) {
-        const people = belongWhichGroup.get(key);
-        let group = [];
-        while (people.length > 0) {
-            if (group.length < key) group.push(people.pop());
-            else {
-                answer.push([...group]);
-                group = [];
-            }
+    groupSizes.forEach((group, index) => {
+        if (groups[group] === undefined) groups[group] = [index];
+        else groups[group].push(index);
+
+        if (groups[group].length === group) {
+            answer.push([...groups[group]]);
+            groups[group] = [];
         }
-        answer.push([...group]);
-    }
+    });
     return answer;
 };
 

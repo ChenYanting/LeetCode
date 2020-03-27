@@ -3,10 +3,10 @@
  * @return {number}
  */
 var numTilePossibilities = function (tiles) {
-    const occurances = new Map();
+    const occurrences = new Map();
     for (let tile of tiles) {
-        if (occurances.has(tile)) occurances.set(tile, occurances.get(tile) + 1);
-        else occurances.set(tile, 1);
+        if (occurrences.has(tile)) occurrences.set(tile, occurrences.get(tile) + 1);
+        else occurrences.set(tile, 1);
     };
     const count = (map) => {
         let sum = 0;
@@ -19,7 +19,7 @@ var numTilePossibilities = function (tiles) {
         }
         return sum;
     };
-    return count(occurances);
+    return count(occurrences);
 };
 
 console.log(numTilePossibilities('AAB'));
